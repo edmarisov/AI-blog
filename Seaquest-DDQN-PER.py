@@ -62,7 +62,7 @@ class Brain:
         model.add(Flatten())
         model.add(Dense(units=512, activation='relu'))
 
-        model.add(Dense(units=actionCnt, activation='linear'))
+        model.add(Dense(units=self.actionCnt, activation='linear'))
 
         opt = RMSprop(lr=LEARNING_RATE)
         model.compile(loss=huber_loss, optimizer=opt)

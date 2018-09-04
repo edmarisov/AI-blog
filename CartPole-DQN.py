@@ -46,8 +46,8 @@ class Brain:
     def _createModel(self):
         model = Sequential()
 
-        model.add(Dense(units=64, activation='relu', input_dim=stateCnt))
-        model.add(Dense(units=actionCnt, activation='linear'))
+        model.add(Dense(units=64, activation='relu', input_dim=self.stateCnt))
+        model.add(Dense(units=self.actionCnt, activation='linear'))
 
         opt = RMSprop(lr=LEARNING_RATE)
         model.compile(loss=huber_loss, optimizer=opt)
